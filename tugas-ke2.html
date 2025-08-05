@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tugas 2</title>
+</head>
+<body>
+<style>
+    *,
+    html{
+        margin:0;
+        padding:0;
+    }
+   body{
+        width: 100%;
+        height: 100%;
+        background-color: whitesmoke;
+    }
+    /* NAVBAR */
+    .navbar{
+        width: 100%;
+        font-family: arial, sans-serif;
+        text-align: center;
+        height: 50px;
+        background-color: rgb(0, 68, 255);
+        display: grid;
+        grid-template: 'judul1 judul2 judul3 judul4';
+        grid-template-columns: 70% 10% 10% 10%;
+        position: fixed;
+    }
+    
+    .navbar div{
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+
+    .navbar a{
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        margin: 10px;
+        border-radius: 8px;
+        transition: color 0.3s ease-in-out;
+
+    }
+    .a-menu:hover{
+        color: rgb(198, 198, 198);
+    }
+    .navbar1{
+        width: 100%;
+        font-family: arial, sans-serif;
+        text-align: center;
+        height: 50px;
+        background-color: rgb(0, 68, 255);
+        display: grid;
+        grid-template: 'judul1 judul2 judul3 judul4';
+        grid-template-columns: 70% 10% 10% 10%;
+    }
+    
+    .navbar1 div{
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+
+    .navbar1 a{
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        margin: 10px;
+        border-radius: 8px;
+        transition: color 0.3s ease-in-out;
+
+    }
+    .a-menu1:hover{
+        color: rgb(198, 198, 198);
+    }
+    /* BODY => HEADER */
+    .header{
+        /* margin-top: 50px; */
+        display: grid;
+        grid-template: 'header-kiri header-kanan';
+        grid-template-columns: 50% 50%;
+        height: 500px;
+        width: 100%;
+        background-color: white;
+        border-radius: 10px;
+    }
+    .header-kanan{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .header-kanan img{
+        width: 600px;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin: 10px;
+    }
+    .gambar-border{
+        background-color: rgb(174, 174, 174);
+        width: 620px;
+        height: 420px;
+        border-radius: 10px;
+    }
+    .header-kiri{
+        display: auto;
+        margin: auto;
+        padding: auto;
+        text-align: center;
+        font-family: sans-serif;
+    }
+    .header-kiri button{
+        background-color: rgb(0, 68, 255);
+        color: white;
+        height: 40px;
+        width: 150px;
+        border: none;
+        border-radius: 8px;
+        font-family: sans-serif;
+        transition: 0.1s ease-in-out;
+    }
+    .header-kiri button:hover{
+        border: 1px solid black;
+        color: rgb(198, 198, 198);
+    }
+    
+    /* BIODATA */
+
+    .biodata{
+        width: 100%;
+        min-height: auto;
+        display: grid;
+        grid-template: 'biodata-judul' 'biodata-isi';
+        grid-row: repeat(2, auto);
+        font-family: sans-serif;
+        background-color: white;
+        border-radius:10px ;
+        margin: 10px 0 10px 0;
+        padding: 20px 0 0 0;
+    }
+    .biodata-judul{
+        width: 100%;
+        text-align: center;
+    }
+    .biodata-judul h1{
+        color: rgb(0, 68, 255);
+    }
+    .biodata-judul p{
+        color: grey;
+        margin-bottom: 40px;
+    }
+    .biodata-isi{
+        width: 100%;
+        height: auto;
+        display:grid;
+        gap: 10px;
+        grid-template: 'nama pendidikan pekerjaan' 'kontak hobi alamat';
+        grid-column: 100px 100px 100px;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    .biodata-isi div{
+        background-color: rgb(214, 211, 211);
+        padding: 10px;
+        border-radius: 8px;
+        height: 30px;
+        width: 400px;
+        display: flex;  
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        transition: transform 0.3s ease-in-out;
+    }
+    .biodata-isi div:hover{
+        transform: scale(1.05);
+    }
+    .portofolio{
+        margin: 15px 0 15px 0;
+        padding: 0;
+        width: 100%;
+        display: grid;
+        grid-template: 'portofolio-judul' 'portofolio-card';
+        grid-template-rows: repeat(2, auto);
+        grid-row: 1fr;
+        text-align: center;
+        font-family: sans-serif;
+        background-color: white;
+        border-radius: 10px;
+    }
+    .portofolio-judul{
+        width: 100%;
+        height: 20px;
+        text-align: center;
+        margin: 10px 0 40px 0;
+        padding: 10px 0 0 0;
+        color: rgb(0, 68, 255);
+
+    }
+    .portofolio-card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        max-width: 1200px;      
+        margin: 0 auto;         
+        padding: 0 20px;     
+        margin: auo;   
+    }
+
+    .portofolio-card-container div{
+        
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        overflow: hidden;
+        background: white;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease-in-out;
+
+    }
+    
+    .portofolio-card-container div:hover{
+        transform:  scale(1.05);
+    }
+    .portofoli-img{
+        width: 300px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 10px 10px 0 0;
+    }
+    .footer{
+        background-color: rgb(0, 68, 255);
+        font-family: sans-serif;
+        text-align: center;
+        height: 40px;
+    }
+    .footer p{
+        color: white;
+        padding: 12px 0 10px 0;
+        margin: 0;
+    }
+</style>
+<!-- Section 1: Menu -->
+<div class="navbar">
+        <div class="judul1"><a class="a-judul"href="#Home">Fadly Razak</a></li></div>
+        <div class="judul2"><a class="a-menu" href="#Header">Header</a></li></div>
+        <div class="judul3"><a class="a-menu" href="#Biodata">Biodata</a></li></div>
+        <div class="judul4"><a class="a-menu" href="#Portofolio">Portofolio</a></li></div>
+</div>
+<a name="Home"></a>
+<a name="Header"></a>
+<div class="navbar1">
+        <div class="judul11"><a class="a-judul"href="#Home">Fadly Razak</a></li></div>
+        <div class="judul12"><a class="a-menu1" href="#Header">Header</a></li></div>
+        <div class="judul13"><a class="a-menu1" href="#Biodata">Biodata</a></li></div>
+        <div class="judul14"><a class="a-menu1" href="#Portofolio">Portofolio</a></li></div>
+</div>
+
+<!-- Section 2: Judul Kiri dan Gambar Kanan -->
+<div class="header">
+    <div class="header-kiri">
+        <h2>Selamat Datang di Web Saya</h2>
+        <p>Ini adalah contoh halaman web menggunakan tabel tanpa CSS.</p><br>
+        <button>Pelajari Lebih Lanjut</button>
+    </div>    
+    <div class="header-kanan">
+        <div class="gambar-border">
+        <img src="asets/orang.jpg" alt="Gambar Header">
+        </div>    
+    </div> 
+    <a name="Biodata"></a>
+</div>
+
+<!-- Section 3: Biodata dengan 6 Box -->
+<div class="biodata">
+      <div class="biodata-judul">
+        <h1>About Me</h1><br>
+        <p>Perkenalan Diri</p>
+      </div>
+      <div class="biodata-isi">
+          <div class="nama">
+              <p>
+                  <b>Nama Lengkap :</b> 
+                  Fadly Razak
+              </p>
+          </div>
+          <div class="pendidikan">
+              <p>
+                  <b>Pendidikan :</b> 
+                  D3 management Informatika
+              </p>
+          </div>
+          <div class="pekerjaan">
+              <p>
+                  <b>Pekerjaan :</b> 
+                    Mahasiswa
+              </p>
+          </div>
+          <div class="kontak">
+              <p>
+                  <b>Kontak :</b> 
+                  fadlyrzk06@gmail.com
+              </p>
+          </div>
+          <div class="hobi">
+              <p>
+                  <b>Hobi :</b> 
+                  Olahraga, Membaca Komik
+              </p>
+          </div>
+          <div class="alamat">
+              <p>
+                  <b>Alamat :</b> 
+                  Padang, Sumatera Barat
+              </p>
+          </div>
+    </div>
+</div>
+<a name="Portofolio"></a>
+<!-- Section 4: Portofolio -->
+<div class="portofolio">
+    <div class="portofolio-judul">
+        <h1>Portofolio</h1>
+    </div>
+    <div class="portofolio-card-container">
+    <div class="portofolio-card1">        
+        <img src="asets/1.png" class="portofoli-img">
+        <p><b>Project 1</b></p>
+        <p>website umkm buatan sendiri yang bertemakan rumah makan padang</p>
+    </div>
+    <div class="portofolio-card2">  
+        <img src="asets/2.png" class="portofoli-img">
+        <p><b>Project 2</b></p>
+        <p>website biodata 1</p>
+    </div>    
+    <div class="portofolio-card3">        
+        <img src="asets/3.png" class="portofoli-img">
+        <p><b>Project 3</b></p>
+        <p>website tutorial</p>
+    </div>
+    <div class="portofolio-card4">  
+        <img src="asets/4.png" class="portofoli-img">
+        <p><b>Project 4</b></p>
+        <p>website biodata 2</p>
+    </div>    
+    </div>
+</div>
+<div class="footer">
+     <p>&copy; 2025 Fadly Razak. Tugas ke Dua.</p>
+</div>
+</body>
+</html>
